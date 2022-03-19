@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Serif:ital,wght@1,400;1,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto Serif;
+  box-sizing: border-box;
+}
+
+header {
+  background: #dcccc0;
+  padding: 10px;
+  color: #545454;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  padding: 16px;
+  max-width: 992px;
+  margin: 0 auto;
+}
+.search,
+.bookContainer .container,
+.inputContainer {
+  box-shadow: 0 4px 8px 0 black;
+}
+.search {
+  margin: 16px;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #545454;
+  border-radius: 10px;
+  background: #545454;
+  height: 60px;
+  color: #dcccc0;
+}
+.search > form {
+  padding: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr 0.5fr;
+  grid-gap: 5px;
+}
+
+.search > form > button {
+  background-color: #dcccc0;
+  color: #545454;
+  cursor: pointer;
+}
+.inputContainer {
+  background: #545454;
+  color: #dcccc0;
+  padding: 16px;
+  border-radius: 10px;
+  height: 350px;
+  width: 100%;
+  flex-basis: 25%;
+}
+
+.bookContainer {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  height: 250px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.form-title {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="number"] {
+  font-family: Roboto serif;
+  background: #dcccc0;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.btn-submit {
+  width: fit-content;
+  border: none;
+  font-family: Roboto Serif;
+  border-radius: 16px;
+  padding: 5px 7px;
+  border: 2px solid white;
+  color: #545454;
+  background: #dcccc0;
+  font-size: 15px;
+  margin-top: auto;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: white;
+  color: #545454;
+}
+
+input[type="text"],
+input[type="number"],
+.btn-submit:focus {
+  outline: none;
+}
+
+.bookContainer .container {
+  border-radius: 8px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  background: #545454;
+  color: #dcccc0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.item {
+  border-radius: 16px;
+  margin-top: 16px;
+  padding: 12px 24px 12px 24px;
+  background: #dcccc0;
+}
+
+.item > .inner h2 {
+  margin-bottom: unset;
+  color: #545454;
+}
+
+.item > .inner p {
+  margin-top: 5px;
+  color: #545454;
+}
+
+.check-button,
+.trash-button,
+.undo-button {
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  margin-left: auto;
+}
+
+.check-button:hover,
+.trash-button:hover,
+.undo-button:hover {
+  background-size: contain;
+}
+
+.check-button {
+  background: url("../assets/check-outline.svg");
+}
+
+.check-button:hover {
+  background: url("../assets/check-solid.svg");
+}
+
+.trash-button {
+  background: url("../assets/trash-outline.svg");
+  margin-left: 16px;
+}
+
+.trash-button:hover {
+  background: url("../assets/trash-fill.svg");
+}
+
+.undo-button {
+  background: url("../assets/undo-ouline.svg");
+}
+
+.undo-button:hover {
+  background: url("../rassets/undo-ouline.svg");
+}
+
+.check-button:foculs,
+.trash-button {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .input {
+    flex-direction: column;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .inputContainer {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .bookContainer .container {
+    margin: 16px 0;
+  }
+
+  .inputCnontainer {
+    margin-top: 16px;
+    flex-basis: 100%;
+  }
+
+  .form {
+    flex-basis: 100%;
+  }
+}

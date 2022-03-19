@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="text-center">Bookshelf Apps</h1>
+    </header>
+
+    <div class="input">
+      <div class="search text-center" id="serch">
+        <label for="searchBook">Search Book</label><br />
+        <input id="searchBookTitle" type="search" placeholder="input title" />
+      </div>
+      <div class="inputContainer" id="add-todo">
+        <h2 class="inputContainerCenter" class="text-center">Input Books</h2>
+        <form class="form" action="#" id="form">
+          <div class="form-title">
+            <label for="title">Title</label><br />
+            <input type="text" id="title" name="title" required /><br />
+          </div>
+          <div class="form-title">
+            <label for="author">Author</label><br />
+            <input type="text" id="author" name="author" required /><br />
+          </div>
+          <div class="form-title">
+            <label for="year">Year</label><br />
+            <input type="number" id="year" name="year" required /><br />
+          </div>
+          <div class="inputInline">
+            <label for="inputComplete">Selesai dibaca</label>
+            <input id="inputComplete" type="checkbox" />
+          </div>
+          <input
+            type="submit"
+            value="Masukan buku ke rak"
+            name="Submit"
+            class="btn-submit"
+          />
+        </form>
+      </div>
+
+      <div class="bookContainer">
+        <div class="container">
+          <h2 class="container-header">Belum selesai dibaca</h2>
+          <div class="list-item" id="books"></div>
+        </div>
+
+        <div class="container">
+          <h2 class="container-header">Selesai dibaca</h2>
+          <div class="list-item" id="complete-books"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+  </body>
+</html>
