@@ -84,7 +84,7 @@ function loadDataFromStorage() {
 function makeBook(bookObject) {
   const { id, title, author, year, isComplete } = bookObject;
 
-  const textTitle = document.createElement("h2");
+  const textTitle = document.createElement("h3");
   textTitle.innerText = title;
 
   const textAuthor = document.createElement("p");
@@ -104,13 +104,13 @@ function makeBook(bookObject) {
   if (isComplete) {
     const undoButton = document.createElement("button");
     undoButton.classList.add("undo-button");
-    undoButton.addEventListener("click", function () {
+    undoButton.addEventListener("click", function() {
       undoTaskFromCompleted(id);
     });
 
     const trashButton = document.createElement("button");
     trashButton.classList.add("trash-button");
-    trashButton.addEventListener("click", function () {
+    trashButton.addEventListener("click", function() {
       alert("Buku akan dihapus");
       removeTaskFromCompleted(id);
     });
@@ -119,12 +119,12 @@ function makeBook(bookObject) {
   } else {
     const checkButton = document.createElement("button");
     checkButton.classList.add("check-button");
-    checkButton.addEventListener("click", function () {
+    checkButton.addEventListener("click", function() {
       addTaskToCompleted(id);
     });
     const trashButton = document.createElement("button");
     trashButton.classList.add("trash-button");
-    trashButton.addEventListener("click", function () {
+    trashButton.addEventListener("click", function() {
       alert("Buku akan dihapus");
       removeTaskFromCompleted(id);
     });
@@ -182,10 +182,10 @@ function undoTaskFromCompleted(bookId) {
   saveData();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const submitForm = document.getElementById("form");
 
-  submitForm.addEventListener("submit", function (event) {
+  submitForm.addEventListener("submit", function(event) {
     event.preventDefault();
     addBook();
   });
@@ -198,7 +198,7 @@ document.addEventListener(SAVED_EVENT, () => {
   console.log("Data berhasil di simpan.");
 });
 
-document.addEventListener(RENDER_EVENT, function () {
+document.addEventListener(RENDER_EVENT, function() {
   const uncompletedBookList = document.getElementById("books");
   const listCompleted = document.getElementById("complete-books");
 

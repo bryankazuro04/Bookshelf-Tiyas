@@ -1,15 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Serif:ital,wght@1,400;1,500&display=swap");
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
 body {
-  margin: 0;
-  padding: 0;
   font-family: Roboto Serif;
   box-sizing: border-box;
+}
+
+h2 {
+  color: #dcccc0;
+  font-size: 1.2em;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="number"] {
+  margin-bottom: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: Roboto serif;
+  background: #dcccc0;
+  font-size: 15px;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  accent-color: #dcccc0;
+}
+
+.ml-15px {
+  margin-left: 15px;
+}
+
+.d-fl {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
 }
 
 header {
@@ -18,95 +50,65 @@ header {
   color: #545454;
 }
 
-.text-center {
-  text-align: center;
+.main-content {
+  margin: 0 auto;
+  padding: 16px;
+  width: fit-content;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  grid-template-rows: repeat(1, 0.2fr);
 }
 
-.input {
-  display: flex;
-  padding: 16px;
-  max-width: 992px;
-  margin: 0 auto;
+.box-search {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
-.search,
-.bookContainer .container,
-.inputContainer {
+
+.box-input {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+}
+
+.box-book {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.container {
+  padding: 2em;
+  border-radius: 10px;
+  background: #545454;
+  height: fit-content;
+  flex-direction: column;
+  gap: 25px;
   box-shadow: 0 4px 8px 0 black;
 }
-.search {
-  margin: 16px;
-  align-items: center;
-  padding: 5px;
-  border: 1px solid #545454;
-  border-radius: 10px;
-  background: #545454;
-  height: 60px;
+
+.container label {
   color: #dcccc0;
-}
-.search > form {
-  padding: 16px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr 0.5fr;
-  grid-gap: 5px;
-}
-
-.search > form > button {
-  background-color: #dcccc0;
-  color: #545454;
-  cursor: pointer;
-}
-.inputContainer {
-  background: #545454;
-  color: #dcccc0;
-  padding: 16px;
-  border-radius: 10px;
-  height: 350px;
-  width: 100%;
-  flex-basis: 25%;
-}
-
-.bookContainer {
-  width: 100%;
-}
-
-.form {
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
-  height: 250px;
-  width: 100%;
-  border-radius: 16px;
 }
 
 .form-title {
-  display: flex;
+  margin-bottom: 10px;
   flex-direction: column;
 }
 
-input[type="search"],
-input[type="text"],
-input[type="number"] {
-  font-family: Roboto serif;
-  background: #dcccc0;
-  border: 1px solid white;
-  border-radius: 5px;
-  margin-bottom: 8px;
-  font-size: 15px;
-}
-
 .btn-submit {
-  width: fit-content;
-  border: none;
-  font-family: Roboto Serif;
+  margin-top: 10px;
+  border: 2px solid white;
   border-radius: 16px;
   padding: 5px 7px;
-  border: 2px solid white;
+  width: fit-content;
   color: #545454;
   background: #dcccc0;
   font-size: 15px;
-  margin-top: auto;
-  align-self: flex-end;
+  white-space: pre-wrap;
   cursor: pointer;
 }
 
@@ -115,36 +117,29 @@ input[type="number"] {
   color: #545454;
 }
 
-input[type="text"],
-input[type="number"],
-.btn-submit:focus {
-  outline: none;
+.list-item {
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.bookContainer .container {
-  border-radius: 8px;
-  margin-left: 16px;
-  margin-bottom: 16px;
-  background: #545454;
-  color: #dcccc0;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-}
 .item {
-  border-radius: 16px;
   margin-top: 16px;
-  padding: 12px 24px 12px 24px;
+  border-radius: 16px;
+  padding: 12px 15px;
+  width: 30%;
   background: #dcccc0;
 }
 
-.item > .inner h2 {
+.item .inner {
+  margin-bottom: 7px;
+}
+
+.item>.inner h2 {
   margin-bottom: unset;
   color: #545454;
 }
 
-.item > .inner p {
+.item>.inner p {
   margin-top: 5px;
   color: #545454;
 }
@@ -191,33 +186,34 @@ input[type="number"],
   background: url("../rassets/undo-ouline.svg");
 }
 
-.check-button:foculs,
+.check-button:focus,
 .trash-button {
   outline: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .input {
+@media screen and (max-width: 1280px) {
+  .main-content {
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(1, 150px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     width: 100%;
   }
+  .container {
+    padding: 1.5em;
+  }
+  .item {
+    width: 48%;
+  }
+}
 
-  .inputContainer {
-    margin-top: 16px;
+@media screen and (max-width: 576px) {
+  .item {
     width: 100%;
-  }
-
-  .bookContainer .container {
-    margin: 16px 0;
-  }
-
-  .inputCnontainer {
-    margin-top: 16px;
-    flex-basis: 100%;
-  }
-
-  .form {
-    flex-basis: 100%;
   }
 }
